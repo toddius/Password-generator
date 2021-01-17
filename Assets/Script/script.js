@@ -5,7 +5,8 @@ var generateBtn = document.querySelector("#generate");
 var passwordLength ="";
 var characterChoices = [];
 var passwordArr = [];
-var passwordSt = ""
+var passwordSt = "";
+var password = "";
 const lowerCaseLettersArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 const upperCaseLettersArr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 const numericalCharsArr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
@@ -91,24 +92,22 @@ function generatePassword () {
   console.log(characterChoices);
 
 
-  for (i = 0 ; i = passwordLengthNum ; i++) {
-      var selectIndex = Math.floor(Math.random() * (characterChoices.length));
-      console.log(selectIndex);
-      var charChoiceSt = characterChoices[selectIndex];
-      passwordArr = passwordArr.push(charChoiceSt);
+  for (i = 0 ; i < passwordLengthNum ; i++) {
+      password = password + characterChoices[Math.floor(Math.random() * (characterChoices.length))];
+      // passwordArr = passwordArr.push(charChoiceSt);
       // passwordArr = passwordArr.push(characterChoices[selectIndex].toString());
-      passwordSt = passwordArr.toString();
-      console.log(passwordSt); 
+      // password = passwordArr.toString();
+      console.log(password); 
   }
-  return passwordSt;
+  return password;
 }
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var passwordGen = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = passwordGen;
 
 }
 
@@ -121,5 +120,4 @@ generateBtn.addEventListener("click", writePassword);
 
 // when each type is chosen, it should be validated and AT LEAST one charactertype should be selected
 // when all prompts are answered, a password is generated that matches all the selected criteria
-// WHEN the password is generated -
-// THEN the password is either displayed in an alert or written to the page
+
