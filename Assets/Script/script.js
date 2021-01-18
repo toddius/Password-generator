@@ -39,6 +39,16 @@ function generatePassword () {
   // validate choice
   if (lowercaseChoice == "Y") {
     characterChoices = characterChoices.concat(lowerCaseLettersArr); 
+    function lowercaseCheck (){
+      if (password.match(/[a-z]/g) === false) {
+        password = password.split("");
+        password = password.pop();
+        password = password.push(lowerCaseLettersArr * [Math.floor(Math.random() * (characterChoices.length))]);
+        password = password.toString();
+        console.log(password);
+      } else {
+      }
+    }
   } 
   else if (!lowercaseChoice == "N" && !lowercaseChoice == "Y") 
   {
@@ -54,6 +64,15 @@ function generatePassword () {
   // validate choice
   if (uppercaseChoice == "Y") {
     characterChoices = characterChoices.concat(upperCaseLettersArr); 
+    function uppercaseCheck (){
+      if (password.match(/[A-Z]/g) === false) {
+        password = password.split("");
+        password = password.pop();
+        password = password.push(upperCaseLettersArr * [Math.floor(Math.random() * (characterChoices.length))]);
+        password = password.toString();
+      } else {
+      }
+    }
   } 
   else if (!uppercaseChoice == "N" && !uppercaseChoice == "Y") 
   {
@@ -69,6 +88,15 @@ function generatePassword () {
   // validate choice
   if (numericChoice == "Y") {
     characterChoices = characterChoices.concat(numericalCharsArr);
+    function numericCheck (){
+      if (password.match(/[0-9]/g) === false) {
+        password = password.split("");
+        password = password.pop();
+        password = password.push(numericalCharsArr * [Math.floor(Math.random() * (characterChoices.length))]);
+        password = password.toString();
+      } else {
+      }
+    }
   } 
   else if (!numericChoice == "N" && !numericChoice == "Y") {
       numericChoice = window.prompt("Invalid input. Type 'Y' for Yes or 'N' for no.");
@@ -83,6 +111,15 @@ function generatePassword () {
   // validate choice
   if (specialCharChoice == "Y") {
     characterChoices = characterChoices.concat(specialCharsArr);
+    function specialCheck (){
+      if (password.match(/[^a-zA-Z\d]/g) === false) {
+        password = password.split("");
+        password = password.pop();
+        password = password.push(specialCharsArr * [Math.floor(Math.random() * (characterChoices.length))]);
+        password = password.toString();
+      } else {
+      }
+    }
   } 
   else if (!numericChoice == "N" && !numericChoice == "Y") {
       specialCharChoice = window.prompt("Invalid input. Type 'Y' for Yes or 'N' for no.");
@@ -91,14 +128,18 @@ function generatePassword () {
   }
   console.log(characterChoices);
 
-
+// create password
   for (i = 0 ; i < passwordLengthNum ; i++) {
       password = password + characterChoices[Math.floor(Math.random() * (characterChoices.length))];
-      // passwordArr = passwordArr.push(charChoiceSt);
-      // passwordArr = passwordArr.push(characterChoices[selectIndex].toString());
-      // password = passwordArr.toString();
       console.log(password); 
   }
+
+// checks if password has at least one of the chosen characters
+  lowercaseCheck();
+  uppercaseCheck();
+  numericCheck();
+  specialCheck();
+
   return password;
 }
 
