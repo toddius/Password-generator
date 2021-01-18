@@ -7,10 +7,10 @@ var characterChoices = [];
 var passwordArr = [];
 var passwordSt = "";
 var password = "";
-const lowerCaseLettersArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-const upperCaseLettersArr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-const numericalCharsArr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-const specialCharsArr = [' ', '!', '#', '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~', '"', "'"]
+const lowerCaseLettersArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+const upperCaseLettersArr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+const numericalCharsArr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+const specialCharsArr = [' ', '!', '#', '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~', '"', "'"];
 
 // create a function called generatePassword() that prompts the user - what character types would you like? 
 function generatePassword () {
@@ -128,13 +128,13 @@ function generatePassword () {
   }
   console.log(characterChoices);
 
-// create password
+  // create password
   for (i = 0 ; i < passwordLengthNum ; i++) {
       password = password + characterChoices[Math.floor(Math.random() * (characterChoices.length))];
       console.log(password); 
   }
 
-// checks if password has at least one of the chosen characters
+  // checks if password has at least one of the chosen characters
   lowercaseCheck();
   uppercaseCheck();
   numericCheck();
@@ -152,13 +152,5 @@ function writePassword() {
 
 }
 
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-// what needs to be done:
-
-// when each type is chosen, it should be validated and AT LEAST one charactertype should be selected
-// when all prompts are answered, a password is generated that matches all the selected criteria
-
