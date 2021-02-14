@@ -17,3 +17,19 @@ After all the propmts are addressed by the user, a for loop repeats for the leng
 Next, the functions for character check are called and run if they were declared in the character validations.
 
 Finally the password is returned.
+
+## Updates for resubmission
+
+I took the character length prompt out of the generatePassword function and made it a separate function that is called within the generatePassword function. This seems to have fixed the recursion issues I was having when the incorrect number of charcters was typed into the prompt.
+
+I also took the charcter choice check functions out of the generatePassword function. They are called at the end of the generatePassword function before the password is passed to the function that writes it to the display div. 
+
+It functions better and generates a password every time.
+
+### Screen shots
+(/Password-generator/Assets/Images/Screen Shot 2021-02-14 at 3.22.57 PM?raw=true "")
+(/Password-generator/Assets/Images/Screen Shot 2021-02-14 at 3.23.32 PM?raw=true "")
+(/Password-generator/Assets/Images/Screen Shot 2021-02-14 at 3.23.46 PM?raw=true "")
+(/Password-generator/Assets/Images/Screen Shot 2021-02-14 at 3.23.53 PM?raw=true "")
+(/Password-generator/Assets/Images/Screen Shot 2021-02-14 at 3.24.02 PM?raw=true "")
+(/Password-generator/Assets/Images/Screen Shot 2021-02-14 at 3.24.21 PM?raw=true "")
